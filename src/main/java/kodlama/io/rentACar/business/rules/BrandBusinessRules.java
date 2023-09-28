@@ -17,4 +17,11 @@ public class BrandBusinessRules {
 			throw new BusinessException("Brand name already exists");
 		}
 	}
+	
+	public void checkIfBrandNameEmpty(String name) {
+		if (name.equals("")) {
+			throw new BusinessException("Brand name cannot be empty");
+		}
+	}
+	
 }

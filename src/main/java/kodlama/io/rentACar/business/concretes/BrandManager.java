@@ -52,7 +52,7 @@ public class BrandManager implements BrandService{
 		brand.setName(createBrandRequest.getName());
 		*/
 		this.brandBusinessRules.checkIfBrandNameExists(createBrandRequest.getName());// burası bir exception fırlatırsa alt satırdaki işlemler yapılmayacak
-		
+		this.brandBusinessRules.checkIfBrandNameEmpty(createBrandRequest.getName());
 		Brand brand = this.modelMapperService.forRequest().map(createBrandRequest, Brand.class);
 		
 		this.brandRepository.save(brand);

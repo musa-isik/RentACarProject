@@ -34,8 +34,7 @@ public class ModelManager implements ModelService{
 	public void add(CreateModelRequest createModelRequest) {
 		Model model = this.modelMapperService.forRequest().map(createModelRequest, Model.class);
 		
-		this.modelRepository.save(model);
-		
+		this.modelRepository.save(model);	
 	}
 
 }
